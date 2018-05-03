@@ -1,0 +1,45 @@
+This file is like my sketch paper to prototype this project
+
+Main goal: intercept and log traffic that passes over a digital network or part of a network (according to my friend Wikipedia) :)
+
+The sniffer intercepts and log network traffic. It captures each possible packet and if asked, decodes the packet's raw data to show possibly compromising information.
+
+A sniffer works in your subnet, you can harvest data from your subnet communication then send it to a decentralized proxy for example.
+
+To use a packet sniffer we need a promiscuous network card and a specific packet driver software. We need to place the NIC in promiscuous mode. 
+
+NOTE 1: We will first build a sniffer to sniff in regular users networks (no switched network / no enterprise networks)
+
+Feature: you can provide a private key and target a specific website (if HTTPS covered it will automatically decrypt the packet and log sensitive info)
+
+1st interesting resource for HTTP packets information:
+https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html
+
+2nd interesting resource from BlackHat Python (ctypes Structure class):
+https://docs.python.org/2/library/ctypes.html#structured-data-types
+
+3rd interesting resource from GitHub (WifiGod source code):
+https://github.com/blackholesec/wifigod/blob/master/wifigod.py
+
+In this first sniffer we target http traffic only so TCP/IP packets
+We want to harvest and make a database for each identified user on the target sub-network.
+We target:
+            - visited websites (URL)
+            - associate each url to a date
+            - personal data (even if it is encrypted)
+            like email addresses, username, passwords etc
+            - we need want to collect a maximum data about users in this
+            private subnet
+
+We target especially GET requests because these contains URL's
+
+This is a real tracking and espionage program.
+First thing to do:
+
+Run an external sys-related command to put the NIC in promiscuous mode if asked by the user in the parameters
+('sudo ifconfig [interface-name] promisc up')
+Note: this command works on Linux systems
+
+
+
+decode HTTPS request by doing a request on the same sssl website so we get the key to decrypt the request?
